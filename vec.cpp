@@ -297,36 +297,26 @@ int unitTest()
 {
 
 	Flt tolorance = 0.05;
-<<<<<<< HEAD
 	printf("Enter a tolorance value (0.05 recommended): ");
-=======
 	printf("Enter a tolorance value (0.05 reccomeded): ");
->>>>>>> af914fb47c9a0a00283ffd4ac14426d679b84412
 	cin >> tolorance; 
 	//Program to analyze a vector normalization process.
 	printf("\n3350 programming exam               \n");
 	printf("Derrick Alden\n");
 	printf("Display of normalized vectors.        \n\n");
-<<<<<<< HEAD
   printf("Tolerance: %f \n", tolorance); 
-=======
->>>>>>> af914fb47c9a0a00283ffd4ac14426d679b84412
 	printf("     ----------------  --------------------------  \n");
 	printf("     known input:      actual output:              \n");
 	printf("     X        Y        length    X        Y        \n");
 	printf("     -------  -------  --------  -------  -------  \n");
-<<<<<<< HEAD
 	//len of unit test 260 lines 4 per line
-=======
 	//len of unit test 260
->>>>>>> af914fb47c9a0a00283ffd4ac14426d679b84412
 	int errors = 0;
 	for (int i=0; i<260; i++) {
 		Vec ki = { myArr[i*2+0], myArr[i*2+1] };
 		Vec ao = { ki[0], ki[1] };
 		Flt ret = vecNormalize(ao);
 		//compares X to tolorance
-<<<<<<< HEAD
 		if ( (ki[0] - ao[0]) > tolorance || (ki[1] - ao[1]) > tolorance || ret > ((ki[0]*ki[0]) + (ki[1]*ki[1]) - tolorance)) {
       errors++;
     }	
@@ -344,8 +334,7 @@ int unitTest()
 		  printf("%3i  %7.4lf  %7.4lf  %8.4lf  %7.4lf  %7.4lf <--error X\n",
 			  i+1, ki[0], ki[1], ret, ao[0], ao[1] );
   }
-  }
-=======
+  
 		if ( (ki[0] - ao[0]) > tolorance ) {
 		printf("%3i  %7.4lf  %7.4lf  %8.4lf  %7.4lf  %7.4lf <--error X\n",
 			i+1, ki[0], ki[1], ret, ao[0], ao[1] );
@@ -367,7 +356,6 @@ int unitTest()
 			i+1, ki[0], ki[1], ret, ao[0], ao[1] );
 		}
 	}
->>>>>>> af914fb47c9a0a00283ffd4ac14426d679b84412
 	printf("\nProgram complete.\n");
 	printf("\nErrors found: %i \n\n", errors);
 	return 0;
@@ -377,17 +365,14 @@ int unitTest()
 
 int main(int argc, char *argv[])
 {
-<<<<<<< HEAD
   #ifdef UNIT_TEST
 	unitTest();
 	return 0;
   #endif
-=======
     	#ifdef UNIT_TEST
 	unitTest();
 	return 0;
     	#endif
->>>>>>> af914fb47c9a0a00283ffd4ac14426d679b84412
 	//Program to analyze a vector normalization process.
 	printf("\n3350 programming exam               \n");
 	printf("Derrick Alden\n");
