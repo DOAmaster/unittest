@@ -316,21 +316,25 @@ int unitTest()
 		Vec ki = { myArr[i*2+0], myArr[i*2+1] };
 		Vec ao = { ki[0], ki[1] };
 		Flt ret = vecNormalize(ao);
-		//compares X to tolorance
+		//compares to tolorance to check for errors if error then print
 		if ( (ki[0] - ao[0]) > tolorance || (ki[1] - ao[1]) > tolorance || ret > ((ki[0]*ki[0]) + (ki[1]*ki[1]) - tolorance)) {
       errors++;
+		  printf("%3i  %7.4lf  %7.4lf  %8.4lf  %7.4lf  %7.4lf <--error\n",
+			  i+1, ki[0], ki[1], ret, ao[0], ao[1] );
     }	
-    if((ki[0] - ao[0]) < tolorance && (ki[1] - ao[1]) < tolorance && ret > ((ki[0]*ki[0]) + (ki[1]*ki[1]) - tolorance)) {
+    if((ki[0] - ao[0]) < tolorance && (ki[1] - ao[1]) < tolorance && ret < ((ki[0]*ki[0]) + (ki[1]*ki[1]) - tolorance)) {
       printf("%3i  %7.4lf  %7.4lf  %8.4lf  %7.4lf  %7.4lf\n",
         i+1, ki[0], ki[1], ret, ao[0], ao[1] );
 
-    }else if ( ret > ((ki[0]*ki[0]) + (ki[1]*ki[1]) - tolorance)) {
+    }
+    /*
+    else if ( ret > ((ki[0]*ki[0]) + (ki[1]*ki[1]) - tolorance)) {
 		  printf("%3i  %7.4lf  %7.4lf  %8.4lf  %7.4lf  %7.4lf <--error length\n",
 			  i+1, ki[0], ki[1], ret, ao[0], ao[1] );
-	}else  if ( (ki[1] - ao[1]) > tolorance ) {
+  	}else  if ( (ki[1] - ao[1]) > tolorance ) {
 		  printf("%3i  %7.4lf  %7.4lf  %8.4lf  %7.4lf  %7.4lf <--error Y\n",
 			  i+1, ki[0], ki[1], ret, ao[0], ao[1] );
-  }else if ( (ki[0] - ao[0]) > tolorance ) {
+    }else if ( (ki[0] - ao[0]) > tolorance ) {
 		  printf("%3i  %7.4lf  %7.4lf  %8.4lf  %7.4lf  %7.4lf <--error X\n",
 			  i+1, ki[0], ki[1], ret, ao[0], ao[1] );
   }
@@ -355,6 +359,7 @@ int unitTest()
 		printf("%3i  %7.4lf  %7.4lf  %8.4lf  %7.4lf  %7.4lf\n",
 			i+1, ki[0], ki[1], ret, ao[0], ao[1] );
 		}
+   */
 	}
 	printf("\nProgram complete.\n");
 	printf("\nErrors found: %i \n\n", errors);
